@@ -14,8 +14,10 @@ public class FibonacciTimer {
         int nthNumber;
         Scanner input = new Scanner(System.in);
         
+        // Maximum nth number is 46 for type int, switch the functions to type long if needed
         System.out.print("Nth number: ");
-        nthNumber = Integer.parseInt(input.nextLine());
+        while (!input.hasNextInt()) input.next();
+        nthNumber = input.nextInt();
         System.out.println("Result: " + fibonacciDynamicOptimized(nthNumber) + "\n");
 
         startTime = System.nanoTime();
